@@ -1,0 +1,12 @@
+Z:\Documents\GitHub\NumberKnights\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\Assembly-CSharp.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\Assembly-CSharp.pdb
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\UnityEditor.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\UnityEngine.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\UnityEngine.UI.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\Mono.Cecil.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\nunit.framework.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\Unity.DataContract.dll
+Z:\Documents\GitHub\NumberKnights\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+Z:\Documents\GitHub\NumberKnights\obj\Debug\Assembly-CSharp.dll
+Z:\Documents\GitHub\NumberKnights\obj\Debug\Assembly-CSharp.pdb

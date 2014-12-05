@@ -1,0 +1,11 @@
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEditor.dll
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEngine.dll
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEditor.xml
+Z:\Documents\GitHub\NumberKnights\obj\Debug\UnityVS.NumberKnights.CSharp.csprojResolveAssemblyReference.cache
+Z:\Documents\GitHub\NumberKnights\obj\Debug\Assembly-CSharp.dll
+Z:\Documents\GitHub\NumberKnights\obj\Debug\Assembly-CSharp.pdb
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEngine.xml
+Z:\Documents\GitHub\NumberKnights\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
