@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\Contollers\TeamController.cs" />
      <Compile Include="Assets\Scripts\Maths\Operators.cs" />
      <Compile Include="Assets\Scripts\Maths\QuestionGenerator.cs" />
+     <Compile Include="Assets\Scripts\Views\BarRenderer.cs" />
+     <Compile Include="Assets\Scripts\Views\HealthBarRenderer.cs" />
      <Compile Include="Assets\Scripts\Views\QuestionRenderer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>Z:/Program Files (x86)/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
