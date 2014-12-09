@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400002}
   - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: RedKnight
@@ -85,8 +85,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd27de0d96ef77498d70f03164ec67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   targetTransform: {fileID: 0}
-  MoveSpeed: 1
+  MoveSpeed: 5
+  currentEnemies: []
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,13 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515fde2e1f871f54c8a44360486f2585, type: 3}
+  m_Script: {fileID: 11500000, guid: bae8d22020c85be4f93003aae782e310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BAR_WIDTH: 40
-  BAR_HEIGHT: 10
-  MaxHealth: 1
-  health: 1
+  healthBar: {fileID: 100002, guid: b51e59584169b014fa7488ee2b446c59, type: 2}
+  XScale: .5
+  YScale: .5
+  Offset: 20
+  MaxHealth: 6
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

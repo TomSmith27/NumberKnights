@@ -1,23 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CastleController : MonoBehaviour {
 
-    public int Health
-    {
-        get
-        {
-            return healthBar.Health;
-        }
-        set
-        {
-            healthBar.Health = value;
-        }
-    }
-    HealthBarRenderer healthBar;
+public class CastleController : Controller {
+
 	// Use this for initialization
 	void Start () {
-        healthBar = gameObject.GetComponent<HealthBarRenderer>();
+       healthBar = gameObject.GetComponentInChildren<HealthBarRenderer>();
 	}
 	
 	// Update is called once per frame

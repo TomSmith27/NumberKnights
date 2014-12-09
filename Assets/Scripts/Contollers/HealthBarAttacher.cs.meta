@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: bae8d22020c85be4f93003aae782e310
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - healthBar: {fileID: 100002, guid: b51e59584169b014fa7488ee2b446c59, type: 2}
+  executionOrder: 100
+  icon: {instanceID: 0}
+  userData: 

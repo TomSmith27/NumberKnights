@@ -46,7 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Contollers\CameraController.cs" />
      <Compile Include="Assets\Scripts\Contollers\CastleController.cs" />
+     <Compile Include="Assets\Scripts\Contollers\Controller.cs" />
+     <Compile Include="Assets\Scripts\Contollers\HealthBarAttacher.cs" />
      <Compile Include="Assets\Scripts\Contollers\MinionController.cs" />
      <Compile Include="Assets\Scripts\Contollers\TeamController.cs" />
      <Compile Include="Assets\Scripts\Maths\Operators.cs" />

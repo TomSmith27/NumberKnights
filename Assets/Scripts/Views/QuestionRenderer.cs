@@ -35,6 +35,7 @@ public class QuestionRenderer : MonoBehaviour {
             GUI.BeginGroup(new Rect(0 + (Screen.width * percentAccrossScreen), 0, width, Screen.height * 0.7f));
 
             GUI.Box(new Rect(0, 0, width, Screen.height * 0.4f), questionString);
+            GUI.Label(new Rect(30, 25, width, Screen.height * 0.4f), "Current Gold : " + myTeam.Gold);
             for (int i = 0; i < answers.Count; i++)
             {
                 if (GUI.Button(new Rect((int)(width * 0.1f) + i * ((width * 0.8f) / answers.Count), Screen.height * 0.1f, (width * 0.8f) / answers.Count, Screen.height * 0.15f), answers[i].ToString()))

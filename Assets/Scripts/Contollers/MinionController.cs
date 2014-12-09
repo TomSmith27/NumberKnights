@@ -1,28 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class MinionController : MonoBehaviour {
+
+public class MinionController : Controller {
 
     public Transform targetTransform;
     public int MoveSpeed;
     private bool _onAttackCoolDown;
     private Animator anim;
-    public int Health
-    {
-        get
-        {
-            return healthBar.Health;
-        }
-        set
-        {
-            healthBar.Health = value;
-        }
-    }
+    public List<Controller> currentEnemies = new List<Controller>();
     private CastleController enemyCastle;
-    HealthBarRenderer healthBar;
 	// Use this for initialization
 	void Start () {
-        healthBar = gameObject.GetComponent<HealthBarRenderer>();
+        healthBar = gameObject.GetComponentInChildren<HealthBarRenderer>();
         anim = gameObject.GetComponent<Animator>();
         if (anim == null)
             Debug.LogError("No Animator Attached to " + this.gameObject.name);
@@ -42,23 +33,39 @@ public class MinionController : MonoBehaviour {
 	void Update () {
         if(Health < 1)
             Destroy(this.gameObject);
-        if (Vector3.Distance(this.transform.position, targetTransform.position) > 3)
+        while (currentEnemies.Count > 0 && currentEnemies[0] == null )
+        {
+                currentEnemies.RemoveAt(0);
+        }
+        Fighting = currentEnemies.Count > 0;
+        if (Fighting && Vector3.Distance(this.transform.position, currentEnemies[0].gameObject.transform.position) > 1)
+        {
+            if (!_onAttackCoolDown)
+            {
+                _onAttackCoolDown = true;
+                StartCoroutine(Attack(currentEnemies[0]));
+            }
+        }
+        else if (Vector3.Distance(this.transform.position, targetTransform.position) > 3)
         {
             float step = MoveSpeed * Time.deltaTime;
             Vector3 moveLocation = Vector3.MoveTowards(this.transform.position, targetTransform.position, step);
             moveLocation.y = this.transform.position.y;
             this.transform.position = moveLocation;
         }
-        else if(!_onAttackCoolDown)
-        {
-            _onAttackCoolDown = true;
-            StartCoroutine(AttackCastle());
-        }
 	}
-    public IEnumerator AttackCastle()
+    public IEnumerator Attack(Controller controller)
     {
-            enemyCastle.Health--;
+            controller.Health--;
+            Debug.Log("Attack");
+            if (currentEnemies[0].Health == 0)
+            {
+                currentEnemies.RemoveAt(0);
+            }
+            if (currentEnemies.Count == 0)
+                Fighting = false;
             anim.SetTrigger("Attack");
+            
             yield return new WaitForSeconds(5f);
             _onAttackCoolDown = false;
     }
@@ -66,9 +73,22 @@ public class MinionController : MonoBehaviour {
     {
         if (coll.gameObject.tag != this.gameObject.tag)
         {
-            anim.SetTrigger("Attack");
-            coll.gameObject.GetComponent<MinionController>().Health--;
-        }
+            Controller c = coll.GetComponent<Controller>();
+            currentEnemies.Add(c);
+            if (!_onAttackCoolDown)
+            {
+                Fighting = true;
+                _onAttackCoolDown = true;
+                StartCoroutine(Attack(c));
+            }
+        }        
     }
+    void OnCollisionStay2D(Collision2D coll)
+    {
+        Debug.Log("Colliding");
+    }
+    
 
+
+    public bool Fighting { get; set; }
 }

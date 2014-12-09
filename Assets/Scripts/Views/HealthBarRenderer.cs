@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 [ExecuteInEditMode]
 public class HealthBarRenderer : BarRenderer
@@ -8,22 +9,23 @@ public class HealthBarRenderer : BarRenderer
     public int MaxHealth;
     public int health;
     protected GUIStyle HealthBarStyle;
+    protected SpriteRenderer childRenderer;
     // Use this for initialization
     void Start()
     {
+        base.Start();
         health = MaxHealth;
-        //HealthBarStyle = customSkin.customStyles [3];
+        //Crazy Linq that makes sure the sprite we get is not us
+        var child = from c in this.GetComponentsInChildren<SpriteRenderer>()
+                        where (c.transform != this.transform)
+                        select c;
+        childRenderer = (SpriteRenderer)child.First();
+
     }
     public int Health
     {
         get { return health; }
         set { health = value; }
-    }
-    void OnGUI()
-    {
-        base.OnGUI();
-        GUI.backgroundColor = HealthColour();
-        GUI.Button(new Rect(pos.x, pos.y, BAR_WIDTH * ((float)health/MaxHealth), BAR_HEIGHT), string.Empty);
     }
     Color HealthColour()
     {
@@ -37,6 +39,9 @@ public class HealthBarRenderer : BarRenderer
     // Update is called once per frame
     void Update()
     {
-
+        float healthPercent = ((float)health / (float)MaxHealth);
+        childRenderer.transform.localScale = new Vector3( healthPercent, childRenderer.transform.localScale.y, 1);
+        childRenderer.color = HealthColour();
+        base.Update();
     }
 }
