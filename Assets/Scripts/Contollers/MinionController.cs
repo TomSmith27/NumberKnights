@@ -7,10 +7,12 @@ public class MinionController : Controller {
 
     public Transform targetTransform;
     public int MoveSpeed;
+    public float AttackSpeed;
     private bool _onAttackCoolDown;
     private Animator anim;
     public List<Controller> currentEnemies = new List<Controller>();
     private CastleController enemyCastle;
+
 	// Use this for initialization
 	void Start () {
         healthBar = gameObject.GetComponentInChildren<HealthBarRenderer>();
@@ -38,7 +40,7 @@ public class MinionController : Controller {
                 currentEnemies.RemoveAt(0);
         }
         Fighting = currentEnemies.Count > 0;
-        if (Fighting && Vector3.Distance(this.transform.position, currentEnemies[0].gameObject.transform.position) > 1)
+        if (Fighting)
         {
             if (!_onAttackCoolDown)
             {
@@ -66,7 +68,7 @@ public class MinionController : Controller {
                 Fighting = false;
             anim.SetTrigger("Attack");
             
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(AttackSpeed);
             _onAttackCoolDown = false;
     }
     void OnTriggerEnter2D(Collider2D coll)

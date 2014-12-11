@@ -87,7 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   targetTransform: {fileID: 0}
-  MoveSpeed: 1
+  MoveSpeed: 2
+  AttackSpeed: 1
   currentEnemies: []
 --- !u!114 &11400002
 MonoBehaviour:
@@ -104,7 +105,7 @@ MonoBehaviour:
   XScale: .5
   YScale: .5
   Offset: 20
-  MaxHealth: 3
+  MaxHealth: 2
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
